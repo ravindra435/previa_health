@@ -1,0 +1,35 @@
+<!-- Sidebar -->
+<div class="sidebar bg-light shadow   " style="height: 100%;">
+  <ul class="navbar-nav sidebar-dark accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex ">
+      <!-- <div class="sidebar-brand-text">Previa Health</div> -->
+      <img src="./assets/PreviaLogo.png">
+    </a>
+
+    <hr class="sidebar-divider my-0">
+    <span *ngIf="urls.length > 0">
+      <li class="nav-item" routerLinkActive="active" *ngFor="let item of urls">
+        <a class="nav-link" routerLink="/{{item.name}}">
+
+          <span><i class="{{item.icon}}" aria-hidden="true"></i>&nbsp;{{item.value}}</span></a>
+      </li>
+    </span>
+  </ul>
+</div>
+<!-- /#sidebar-wrapper -->
+
+<!-- <div>
+  <a class="sidebar-brand d-flex ">
+    <div class="sidebar-brand-text">Previa Health</div>
+  </a>
+  <ul>
+    <hr class="sidebar-divider my-0">
+    <span *ngIf="urls.length > 0">
+      <li class="nav-item" routerLinkActive="active" *ngFor="let item of urls">
+        <a class="nav-link" routerLink="/{{item.name}}">
+
+          <span><i class="{{item.icon}}" aria-hidden="true"></i>&nbsp;{{item.value}}</span></a>
+      </li>
+    </span>
+  </ul>
+</div> -->

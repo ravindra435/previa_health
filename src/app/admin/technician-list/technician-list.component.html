@@ -1,0 +1,56 @@
+<div class="country-container mt-3">
+    <div class="container-fluid">
+      <div class="card card-custom example example-compact gutter-b">
+        <div class="card-header">
+          <div class="card-title">
+            <h3 class="card-label">DD-Technician</h3>
+          </div>
+          <div class="card-toolbar">
+            <div class="example-tools justify-content-centerr">
+              <button class="btn btnGroup"  (click)="addTechnician()">
+                Add DD-Technician
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+            
+            <div class="table-responsive example-container mat-elevation-z8">
+                <table class="table  table-hover ">
+                   <thead>
+                       <th>Sno</th>
+                       <th>Name</th>
+                       <th>Email</th>
+                       <th>Mobile no</th>
+                       <!-- <th>Address</th> -->
+                    <th>Action</th>
+                   </thead> 
+                   <tbody>
+                       <tr *ngFor = "let item of technicianListData; let i= index;">
+                        <td>{{ i + pageEvent?.pageIndex * pageEvent?.pageSize + 1 }}</td>
+                           <td>{{item.name}}</td>
+                           <td>{{item.emailAddress}}</td>
+                           <td>{{item.mobileNumber}}</td>
+                           <!-- <td>main road hyd</td> -->
+                           <td>
+                            <mat-icon  (click)="editTechnician(item)" >edit</mat-icon>
+                            <mat-icon (click)="deleteLaboratory(item)" >delete</mat-icon>
+                           </td>
+                       </tr>
+                   </tbody>
+                </table>
+                <!-- pagination div starts from here -->
+                <mat-paginator [length]="length" 
+                [pageSize]="pageSize" 
+                [pageSizeOptions]="pageSizeOptions" 
+                (page)="onPageEvent($event)">
+  </mat-paginator>
+              
+                <!-- pagination div ends here -->
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  

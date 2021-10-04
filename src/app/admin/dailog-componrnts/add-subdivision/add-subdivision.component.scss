@@ -1,0 +1,55 @@
+button{
+    background-color:  #437289;
+    color: white;
+}
+.button{
+    a{
+        background-color:  #437289;
+        color: white;
+    }
+}
+
+.buttons{
+    text-align: end;
+     button {
+    background-color:#437289;
+    color: #fff;
+    margin-right: 10px;
+  }
+}
+
+
+.body{
+    margin:1rem;
+    .patient-heading h3 {
+        color: rgba(31,32,34,.5);
+        margin: 0 0 1.42857rem;
+        font-size: 2rem;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    input, textarea{
+        height: calc(1.5em + 0.75rem + 2px);
+       outline: none;
+      border:1px solid #ced4da;
+      border-radius: 0.25rem;
+      width:100%
+
+    }
+
+    mat-select{
+        height: calc(1.5em + 0.75rem + 2px);
+        outline: none;
+       border:1px solid #ced4da;
+       border-radius: 0.25rem;
+    }
+
+    .check{
+        padding-left: 1rem;
+        margin-top: 1rem;
+    }
+}
+.mat-autocomplete-panel.mat-autocomplete-visible {
+    visibility: hidden !important;
+}

@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <div class="body">
+        <div class="test-heading ">
+            <h3>{{ technicianDetails?.action === "add" ? "ADD" : "UPDATE" }} {{ technicianDetails?.role | uppercase}}</h3>
+        </div>
+        <div class="card mt-3  p-3">
+
+            <form [formGroup]="technicianForm">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                Name :
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Name" formControlName="name" 
+                            [ngClass]="{ 'is-invalid': l.name.touched && l.name.errors }" required >
+                            <div *ngIf="l.name.touched && l.name.errors" class="text-danger">
+                                <div *ngIf="l.name.errors.required">Name is required*</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                Email :
+                            </label>
+                            <input type="email" class="form-control" id="input-email" placeholder="Enter email"
+                                    required formControlName="email"
+                                    [ngClass]="{ 'is-invalid': l.email.touched && l.email.errors }" required>
+                            <div *ngIf="l.email.touched && l.email.errors" class="text-danger">
+                                <div *ngIf="l.email.errors.required">Email is required*</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                Mobile number :
+                            </label>
+                            <input type="number" class="form-control" id="input-mobileNumber"
+                            placeholder="Enter mobile number" required formControlName="mobileNumber"
+                            [ngClass]="{ 'is-invalid': l.mobileNumber.touched && l.mobileNumber.errors }"
+                            required>
+                            <div *ngIf="l.mobileNumber.touched && l.mobileNumber.errors" class="text-danger">
+                                <div *ngIf="l.mobileNumber.errors.required"> Mobile number is required*</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                Street
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Street" formControlName="street" >
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                City
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter City" formControlName="city" >
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                State  
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter State" formControlName="state" >
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                Pin
+                            </label>
+                            <input type="number" class="form-control" placeholder="Enter Pin" formControlName="pin" >
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                Country
+                            </label>
+                            <input type="text" class="form-control" placeholder="Enter Country" formControlName="country" >
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="btn-group mt-2">
+            <div>
+                <!-- <button class="btn mr-2" mat-button>Clear</button> -->
+                <button class="btn" mat-button (click)="submitTechnician()">Save</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

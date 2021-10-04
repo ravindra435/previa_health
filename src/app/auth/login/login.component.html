@@ -1,0 +1,57 @@
+<div class="page-wrap height-100 black">
+    <div class="session-form-hold">
+      <mat-progress-bar mode="determinate" class="session-progress"></mat-progress-bar>
+      <mat-card>
+        <mat-card-content>
+          <div class="text-center pt-8 pb-16">
+              <!-- <h1>PREVIA HEALTH</h1> -->
+              <img src="./assets/PreviaLogo.png">
+            <!-- <img width="60px" src="../../../assets/signin.jpg" alt=""> -->
+            <p class="text-muted m-0">Sign in to your account</p>
+          </div>
+  
+          <p *ngIf="errorMsg" class="text-center"><small class="text-red">{{errorMsg}}</small></p>
+          
+          <form [formGroup]="signinForm" (ngSubmit)="signin()">
+            <div class="">
+              <mat-form-field class="full-width">
+                <input
+                  matInput
+                  name="username"
+                  [formControl]="signinForm.controls['username']"
+                  placeholder="Username"
+                  value="">
+              </mat-form-field>
+              <small 
+                *ngIf="signinForm.controls['username'].hasError('required') && signinForm.controls['username'].touched" 
+                class="form-error-msg"> Username is required </small>
+            </div>
+  
+            <div class="">
+              <mat-form-field class="full-width">
+                <input 
+                  type="password"
+                  name="password"
+                  matInput
+                  [formControl]="signinForm.controls['password']"
+                  placeholder="Password" 
+                  value="">
+              </mat-form-field>
+              <small 
+                *ngIf="signinForm.controls['password'].hasError('required') && signinForm.controls['password'].touched" 
+                class="form-error-msg"> Password is required </small>
+            </div>
+            
+           
+            
+            <button mat-raised-button class="mat-primary full-width mb-1" [disabled]="signinForm.invalid">Sign in</button>
+            <div class="text-right mb-4 signup">
+              <a [routerLink]="'/session/forgotpassword'" class="mat-primary  full-width">Forgot password?</a>
+              <!-- <span fxFlex></span>&nbsp; -->
+              <!-- <a [routerLink]="'/sessions/signup'" class="mat-primary  full-width">Create a new account</a> -->
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
